@@ -8,7 +8,6 @@ import loginIconHover from './../../images/loginHover.svg';
 const favoritColor = '#ff6600';
 
 const HeaderStyled = styled.div`
-    border: 2px solid tomato;
     height: 70px;
     display: flex;
     flex-direction: row;
@@ -26,7 +25,7 @@ const MenuLogo = styled.div`
         background-size: 100% 100%;
     }
     display: none;
-    `
+`
 
 const Logo = styled.div`
     /* color is #ff6600 */
@@ -37,9 +36,7 @@ const Logo = styled.div`
     cursor: pointer;
     margin-left: 2vw;
     order: 2;
-    
-    
-    `
+`
 
 const Menu = styled.div`
     display: flex;
@@ -83,8 +80,8 @@ const LoginStyled = styled.div`
 
     background: url(${loginIcon});
     background-size: 100% 100%;
-    width: calc(1vw + 30px);
-    height: calc(1vw + 30px);
+    width: calc(1vw + 25px);
+    height: calc(1vw + 25px);
     margin: 0 2vw;
     order: 5;
     &:hover{
@@ -94,7 +91,6 @@ const LoginStyled = styled.div`
 `
 
 const SearchStyled = styled.div`
-    border: 1px solid tomato;
     order: 4;
     margin-left: auto;
     display: flex;
@@ -102,32 +98,43 @@ const SearchStyled = styled.div`
     justify-content: center;
     position: relative;
     @media (max-width: 768px){
-        & div{
+        & button{
             display: block;
         }
         & input{
             display: none;
         }
-        &:hover,
         &:focus-within{
-            flex-direction: column;
+            top: 50px;
+            & button{
+                position: absolute;
+                right: 2vw;
+            }
             & input{
                 display: block;
-                top: 50px;
+                position: absolute;
+                right: 0;
+                width: calc(4vw + 250px);
             }
         }
     }
 `
 
-const SearchLogo = styled.div`
+const SearchLogo = styled.button`
     width: calc(1vw + 25px);
     height: calc(1vw + 25px);
-    background-color: rosybrown;
+    border: none;
+    border-radius: 50%;
     align-self: center;
     display: none;
+    background-color: transparent;
+    z-index: 2;
+    cursor: pointer;
 `
 
 const SearchInput = styled.input`
+    font-size: 1.1em;
+    font-weight: 500;
     height: calc(1vw + 25px);
     width: calc(4vw + 180px);
     border-radius: 50px;
@@ -136,8 +143,11 @@ const SearchInput = styled.input`
     border: none;
     outline: none;
     padding: 1rem;
-    position: absolute;
-    right: 0;
+    &:hover,
+    &:focus{
+        background-color: rgba(255, 255, 255, 0.70);
+    }
+
 `
 
 export { Menu, HeaderStyled, MenuLogo, Logo, LoginStyled, SearchStyled, SearchInput, SearchLogo }

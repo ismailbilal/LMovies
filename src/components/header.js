@@ -16,7 +16,7 @@ const Header = () => {
                 </ul>
             </Menu>
             <SearchStyled>
-                <SearchLogo children='srh' />
+                <SearchLogo>hell</SearchLogo>
                 <SearchInput />
             </SearchStyled>
             <LoginStyled />
