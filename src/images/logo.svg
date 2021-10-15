@@ -1,0 +1,18 @@
+<svg width="580" height="250" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="252" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke="#ff6600" transform="rotate(-2.125746250152588 249.5877685546888,140.36801147460994) " stroke-linecap="null" stroke-linejoin="null" id="svg_30" y2="168.539839" x2="249.587767" y1="112.196181" x1="249.587767" stroke-width="9" fill="none"/>
+  <line stroke="#ff6600" transform="rotate(-2.125746250152588 258.3343505859368,124.81053161621112) " stroke-linecap="null" stroke-linejoin="null" id="svg_31" y2="141.439778" x2="268.839333" y1="108.181278" x1="247.829378" stroke-width="9" fill="none"/>
+  <line stroke="#ff6600" transform="rotate(-2.125746250152588 259.9765014648437,153.13456726074256) " stroke-linecap="null" stroke-linejoin="null" id="svg_36" y2="169.810249" x2="248.53775" y1="136.458886" x1="271.415278" stroke-width="9" fill="none"/>
+  <text stroke="#ff6600" transform="matrix(6.61894399611331,0,0,9.64363273422278,-820.2119945018101,-857.8690693350461) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_1" y="109.626062" x="122.471995" fill="#ff6600">LMovies</text>
+ </g>
+</svg>
