@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import darkMenuIcon from "./../../images/darkMenu.png";
 import lightMenuIcon from './../../images/lightMenu.png';
 import logoIcon from './../../images/logo.svg';
@@ -7,6 +7,15 @@ import loginIconHover from './../../images/loginHover.svg';
 import searchLogo from './../../images/search.svg'
 
 const favoritColor = '#ff6600';
+
+const showMenu = keyframes`
+    from{
+        left: -120px
+    }
+    to{
+        left: 0;
+    }
+`
 
 const HeaderStyled = styled.div`
     height: 70px;
@@ -69,16 +78,19 @@ const Menu = styled.div`
         & div{
             display: block;
         }
-        :is(&:hover, &:focus-within) ul{
+        &:hover ul{
+            padding: 2rem 0 0 0;
+            width: 100px;
+            gap: 20px;
             display: flex;
             flex-direction: column;
-            top: 70px;
+            top: 30px;
+            animation: ${showMenu} 0.8s;
         }
     }
 `
 
 const LoginStyled = styled.div`
-
     background: url(${loginIcon});
     background-size: 100% 100%;
     width: calc(1vw + 25px);
@@ -89,9 +101,12 @@ const LoginStyled = styled.div`
         background: url(${loginIconHover});
         background-size: 100% 100%;
     }
+    cursor: pointer;
 `
 
 const SearchStyled = styled.div`
+    height: 10px;
+    width: 10px;
     order: 4;
     margin-left: auto;
     display: flex;
@@ -104,27 +119,33 @@ const SearchStyled = styled.div`
         }
         &:focus-within{
             top: 50px;
+            & button{
+                background-color: transparent;
+            }
             & input{
                 display: block;
                 width: calc(4vw + 250px);
             }
         }
     }
-    `
+`
 
 const SearchLogo = styled.button`
     position: absolute;
     right: 5px;
     width: calc(1vw + 20px);
     height: calc(1vw + 20px);
-    background: url(${searchLogo});
+    background-image: url(${searchLogo});
     background-size: 100% 100%;
+    background-color: rgba(255, 255, 255, 0.30);
     border: none;
     border-radius: 50%;
     align-self: center;
-    background-color: transparent;
     z-index: 2;
     cursor: pointer;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.70);
+    }
     `
 
 const SearchInput = styled.input.attrs(props => ({
