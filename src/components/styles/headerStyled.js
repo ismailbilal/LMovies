@@ -4,6 +4,7 @@ import lightMenuIcon from './../../images/lightMenu.png';
 import logoIcon from './../../images/logo.svg';
 import loginIcon from './../../images/login.svg';
 import loginIconHover from './../../images/loginHover.svg';
+import searchLogo from './../../images/search.svg'
 
 const favoritColor = '#ff6600';
 
@@ -98,41 +99,40 @@ const SearchStyled = styled.div`
     justify-content: center;
     position: relative;
     @media (max-width: 768px){
-        & button{
-            display: block;
-        }
         & input{
             display: none;
         }
         &:focus-within{
             top: 50px;
-            & button{
-                position: absolute;
-                right: 2vw;
-            }
             & input{
                 display: block;
-                position: absolute;
-                right: 0;
                 width: calc(4vw + 250px);
             }
         }
     }
-`
+    `
 
 const SearchLogo = styled.button`
-    width: calc(1vw + 25px);
-    height: calc(1vw + 25px);
+    position: absolute;
+    right: 5px;
+    width: calc(1vw + 20px);
+    height: calc(1vw + 20px);
+    background: url(${searchLogo});
+    background-size: 100% 100%;
     border: none;
     border-radius: 50%;
     align-self: center;
-    display: none;
     background-color: transparent;
     z-index: 2;
     cursor: pointer;
-`
+    `
 
-const SearchInput = styled.input`
+const SearchInput = styled.input.attrs(props => ({
+    type: 'text',
+    placeholder: 'search ...'
+}))`
+    position: absolute;
+    right: 0;
     font-size: 1.1em;
     font-weight: 500;
     height: calc(1vw + 25px);

@@ -16,7 +16,7 @@ const Header = () => {
                 </ul>
             </Menu>
             <SearchStyled>
-                <SearchLogo>hell</SearchLogo>
+                <SearchLogo></SearchLogo>
                 <SearchInput />
             </SearchStyled>
             <LoginStyled />
