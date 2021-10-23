@@ -79,7 +79,7 @@ const Menu = styled.div`
             display: block;
         }
         &:hover ul{
-            padding: 2rem 0 0 0;
+            padding: 2rem 0;
             width: 100px;
             gap: 20px;
             display: flex;
@@ -93,8 +93,8 @@ const Menu = styled.div`
 const LoginStyled = styled.div`
     background: url(${loginIcon});
     background-size: 100% 100%;
-    width: calc(1vw + 25px);
-    height: calc(1vw + 25px);
+    width: calc(1vw + 23px);
+    height: calc(1vw + 23px);
     margin: 0 2vw;
     order: 5;
     &:hover{
@@ -102,73 +102,108 @@ const LoginStyled = styled.div`
         background-size: 100% 100%;
     }
     cursor: pointer;
-`
-
-const SearchStyled = styled.div`
-    height: 10px;
-    width: 10px;
-    order: 4;
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-    @media (max-width: 768px){
-        & input{
-            display: none;
-        }
-        &:focus-within{
-            top: 50px;
-            & button{
-                background-color: transparent;
-            }
-            & input{
-                display: block;
-                width: calc(4vw + 250px);
-            }
-        }
-    }
-`
-
-const SearchLogo = styled.button`
-    position: absolute;
-    right: 5px;
-    width: calc(1vw + 20px);
-    height: calc(1vw + 20px);
-    background-image: url(${searchLogo});
-    background-size: 100% 100%;
-    background-color: rgba(255, 255, 255, 0.30);
-    border: none;
-    border-radius: 50%;
-    align-self: center;
-    z-index: 2;
-    cursor: pointer;
-    &:hover{
-        background-color: rgba(255, 255, 255, 0.70);
-    }
     `
 
-const SearchInput = styled.input.attrs(props => ({
-    type: 'text',
-    placeholder: 'search ...'
-}))`
-    position: absolute;
-    right: 0;
-    font-size: 1.1em;
-    font-weight: 500;
-    height: calc(1vw + 25px);
-    width: calc(4vw + 180px);
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.30);
-    align-self: center;
-    border: none;
-    outline: none;
-    padding: 1rem;
-    &:hover,
-    &:focus{
-        background-color: rgba(255, 255, 255, 0.70);
+const SearchBlock = styled.div`
+    width: clamp(200px, 100% , 250px);
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 4;
+    margin-top: calc((70px - (1px + 23px))/2);
+    margin-left: auto;
+    & div{
+        border-radius: 10px;
     }
-
+    &:hover,
+    &:focus-within{
+        & div{
+            background-color: rgba(255, 255, 255, 0.7);
+            /* display: flex; */ // i've do this with js
+            & div{
+                background-color: transparent;
+            }
+        }
+    }
 `
 
-export { Menu, HeaderStyled, MenuLogo, Logo, LoginStyled, SearchStyled, SearchInput, SearchLogo }
+const SearchInput = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-space-between;
+    padding: .2em .8em;
+        background-color: rgba(255, 255, 255, 0.3);
+    & input,
+    & button {
+        background-color: transparent;
+        border: none;
+        height: calc(.2vw + 25px);
+        &:focus{
+            outline: none;
+        }
+    }
+    & button{
+        width: calc(1vw + 15px);
+        background-image: url(${searchLogo});
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+    & input{
+        width: calc(100% - 1vw - 15px);
+        font-size: 16px;
+        font-weight : large;
+    }
+`
+
+const SearchSugges = styled.div`
+    /* display: none; */
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    & div{
+        padding: .5em .8em;
+    }
+    & .sugges{
+        flex-direction: column;
+        width: 100%;
+        & aside{
+            display: flex;
+            flex-direction: row;
+            & img{
+                height: 50px;
+                width: 40px;
+            }
+        }
+    }
+    & .types{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        gap: 10px;
+        & button{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: rgba(0, 0, 0, .2);
+            margin: 2px;
+        }
+        & .selectedType{
+            color: ${favoritColor};
+            border-bottom: 2px solid ${favoritColor};
+        }
+    }
+`
+
+export {
+    Menu,
+    HeaderStyled,
+    MenuLogo,
+    Logo,
+    LoginStyled,
+    SearchBlock,
+    SearchInput,
+    SearchSugges
+}
