@@ -126,12 +126,51 @@ const SearchBlock = styled.div`
             }
         }
     }
+    & .flex{
+        display: flex;
+    }
+    & .none{
+        display: none;
+    }
+    @media (max-width: 768px){
+        width: calc(1vw + 20px);
+        & div {
+            border-radius: 50%;
+            padding: 0;
+            & input{
+                display: none;
+            }
+            & button{
+                margin: auto;
+            }
+        }
+        &:focus-within {
+            & + div{
+                margin-left: auto;
+            }
+            width: 90%;
+            position: absolute;
+            left: 5%;
+            top: 50px;
+            & div {
+                padding: .2em .8em;
+                width: 100%;
+                border-radius: 10px;
+                & input{
+                    display: block;
+                }
+                & button{
+                    margin-left: -5px;
+                }
+            }
+        }
+    }
 `
 
 const SearchInput = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-space-between;
+    justify-content: space-between;
     padding: .2em .8em;
         background-color: rgba(255, 255, 255, 0.3);
     & input,
@@ -147,6 +186,7 @@ const SearchInput = styled.div`
         width: calc(1vw + 15px);
         background-image: url(${searchLogo});
         background-size: 100% 100%;
+        margin-left: -5px;
         cursor: pointer;
     }
     & input{
@@ -154,7 +194,7 @@ const SearchInput = styled.div`
         font-size: 16px;
         font-weight : large;
     }
-`
+    `
 
 const SearchSugges = styled.div`
     /* display: none; */
@@ -189,6 +229,7 @@ const SearchSugges = styled.div`
             font-size: 16px;
             color: rgba(0, 0, 0, .2);
             margin: 2px;
+            cursor: pointer;
         }
         & .selectedType{
             color: ${favoritColor};

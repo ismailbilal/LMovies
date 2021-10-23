@@ -22,13 +22,12 @@ const Header = () => {
     // get the result of the search
     const showSugges = async (keyword, type) => {
         const movies = await searchFor(keyword, type);
-        console.log(movies);
         setSearchResult(keyword ? [...movies] : []); // so the suggestions will clear when the search is clear
         setSuggDisplay(keyword ? 'flex' : 'none');
     }
 
     useEffect(() => {
-    }, [])
+    }, []);
 
     return (
         <HeaderStyled>
@@ -44,14 +43,17 @@ const Header = () => {
                 </ul>
             </Menu>
             <SearchBlock
-            // onBlur={() => {
-            //     setSearchInput('');
-            //     setSuggDisplay('none');
-            // }
-            // }
+                onBlur={(e) => {
+                    if (e.nativeEvent.relatedTarget === null) {
+                        setSuggDisplay('none');
+                    }
+                }}
             >
                 <SearchInput>
-                    <button />
+                    <button onClick={() => {
+                        showSugges(searchInput, searchType);
+                    }
+                    } />
                     <input
                         type="search"
                         placeholder='search ...'
@@ -63,7 +65,7 @@ const Header = () => {
                         }
                     />
                 </SearchInput>
-                <SearchSugges style={{ display: suggDisplay }}>
+                <SearchSugges className={suggDisplay} >
                     <div className="types">
                         <button onClick={(event) => changeType(event.target, 'multi')} className='selectedType'>All</button>
                         <button onClick={(event) => changeType(event.target, 'movie')} >Movie</button>

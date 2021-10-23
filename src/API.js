@@ -18,10 +18,13 @@ const getData = async (URL) => {
 
 // search for movie or tv show
 const searchFor = async (title, type) => {
-    if (title) {
+    try {
         const URL = `${API.BASE}/search/${type}?query=${title}&api_key=${API.KEY}`;
         const data = await getData(URL);
         return data.results;
+    } catch (err) {
+        console.log(err);
+        return [];
     }
 }
 
