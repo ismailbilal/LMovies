@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/LMovies/static/css/main.545276db.chunk.css",
+    "main.js": "/LMovies/static/js/main.91ed58dd.chunk.js",
+    "main.js.map": "/LMovies/static/js/main.91ed58dd.chunk.js.map",
+    "runtime-main.js": "/LMovies/static/js/runtime-main.52051682.js",
+    "runtime-main.js.map": "/LMovies/static/js/runtime-main.52051682.js.map",
+    "static/js/2.c224a42e.chunk.js": "/LMovies/static/js/2.c224a42e.chunk.js",
+    "static/js/2.c224a42e.chunk.js.map": "/LMovies/static/js/2.c224a42e.chunk.js.map",
+    "index.html": "/LMovies/index.html",
+    "static/css/main.545276db.chunk.css.map": "/LMovies/static/css/main.545276db.chunk.css.map",
+    "static/js/2.c224a42e.chunk.js.LICENSE.txt": "/LMovies/static/js/2.c224a42e.chunk.js.LICENSE.txt",
+    "static/media/login.92a47941.svg": "/LMovies/static/media/login.92a47941.svg",
+    "static/media/loginHover.0927c50f.svg": "/LMovies/static/media/loginHover.0927c50f.svg",
+    "static/media/logo.bd9cfa93.svg": "/LMovies/static/media/logo.bd9cfa93.svg",
+    "static/media/search.3c95369c.svg": "/LMovies/static/media/search.3c95369c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.52051682.js",
+    "static/js/2.c224a42e.chunk.js",
+    "static/css/main.545276db.chunk.css",
+    "static/js/main.91ed58dd.chunk.js"
+  ]
+}
