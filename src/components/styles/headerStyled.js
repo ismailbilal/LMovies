@@ -105,7 +105,7 @@ const LoginStyled = styled.div`
     `
 
 const SearchBlock = styled.div`
-    width: clamp(200px, 100% , 250px);
+    width: clamp(200px, 100% , 300px);
     align-self: flex-start;
     display: flex;
     flex-direction: column;
@@ -144,7 +144,7 @@ const SearchBlock = styled.div`
                 margin: auto;
             }
         }
-        &:focus-within {
+        /* &:focus-within { */
             & + div{
                 margin-left: auto;
             }
@@ -163,7 +163,7 @@ const SearchBlock = styled.div`
                     margin-left: -5px;
                 }
             }
-        }
+        /* } */
     }
 `
 
@@ -206,14 +206,48 @@ const SearchSugges = styled.div`
         padding: .5em .8em;
     }
     & .sugges{
+        display: flex;
         flex-direction: column;
+        gap: 10px;
         width: 100%;
+        color: rgba(0, 0, 0, 0.8);
         & aside{
             display: flex;
             flex-direction: row;
             & img{
-                height: 50px;
-                width: 40px;
+                height: 90px;
+                width: 70px;
+            }
+            & .movie-info{
+                & h4 {
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 200px;
+                }
+                & span{
+                    margin-right: 5px;
+                    & img{
+                        height: 13px;
+                        width: 13px;
+                        margin-right: 3px;
+                    }
+                    & em{
+                        margin-right: 5px;
+                        & .dot{
+                            background-color: #000;
+                            height: 5px;
+                            width: 5px;
+                            display: inline-block;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                color: #000;
+                cursor: pointer;
             }
         }
     }
