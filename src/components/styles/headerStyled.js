@@ -4,7 +4,8 @@ import lightMenuIcon from './../../images/lightMenu.png';
 import logoIcon from './../../images/logo.svg';
 import loginIcon from './../../images/login.svg';
 import loginIconHover from './../../images/loginHover.svg';
-import searchLogo from './../../images/search.svg'
+import darkSearchLogo from './../../images/search.svg';
+import whiteSearchLogo from './../../images/whiteSearch.svg';
 
 const favoritColor = '#ff6600';
 
@@ -119,10 +120,19 @@ const SearchBlock = styled.div`
     &:hover,
     &:focus-within{
         & div{
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, .8);
             /* display: flex; */ // i've do this with js
             & div{
                 background-color: transparent;
+            }
+            & .searchBut{
+                background: url(${darkSearchLogo});
+                background-size: 100% 100%;
+            }
+            & input{
+                ::placeholder{
+                    color: #474747;
+                }
             }
         }
     }
@@ -144,7 +154,7 @@ const SearchBlock = styled.div`
                 margin: auto;
             }
         }
-        /* &:focus-within { */
+        &:focus-within {
             & + div{
                 margin-left: auto;
             }
@@ -163,7 +173,7 @@ const SearchBlock = styled.div`
                     margin-left: -5px;
                 }
             }
-        /* } */
+        }
     }
 `
 
@@ -184,7 +194,7 @@ const SearchInput = styled.div`
     }
     & button{
         width: calc(1vw + 15px);
-        background-image: url(${searchLogo});
+        background-image: url(${whiteSearchLogo});
         background-size: 100% 100%;
         margin-left: -5px;
         cursor: pointer;
@@ -193,6 +203,9 @@ const SearchInput = styled.div`
         width: calc(100% - 1vw - 15px);
         font-size: 16px;
         font-weight : large;
+        ::placeholder{
+            color: #999999;
+        }
     }
     `
 

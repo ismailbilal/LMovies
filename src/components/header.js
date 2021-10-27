@@ -48,15 +48,17 @@ const Header = () => {
             <SearchBlock
                 onBlur={(e) => {
                     if (e.nativeEvent.relatedTarget === null) {
-                        // setSuggDisplay('none'); //3la man9ad style dyal suggs
+                        setSuggDisplay('none');
                     }
                 }}
             >
                 <SearchInput>
-                    <button onClick={() => {
-                        showSugges(searchInput, searchType);
-                    }
-                    } />
+                    <button
+                        className='searchBut'
+                        onClick={() => {
+                            showSugges(searchInput, searchType);
+                        }
+                        } />
                     <input
                         type="search"
                         placeholder='search ...'
