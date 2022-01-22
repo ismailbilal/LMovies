@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { searchFor } from "../API";
 import { HeaderStyled, Logo, Menu, MenuLogo, LoginStyled, SearchBlock, SearchInput, SearchSugges } from "./styles/headerStyled";
 import Suggs from "./suggs";
@@ -24,13 +24,9 @@ const Header = () => {
     // get the result of the search
     const showSugges = async (keyword, type) => {
         const movies = await searchFor(keyword, type);
-        console.log(movies);
         setSearchResult(keyword ? [...movies] : []); // so the suggestions will clear when the search is clear
         setSuggDisplay(keyword ? 'flex' : 'none');
     }
-
-    useEffect(() => {
-    }, []);
 
     return (
         <HeaderStyled>
