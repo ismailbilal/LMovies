@@ -40,6 +40,16 @@ const getItem = async (type, id) => {
 
 }
 
+const getTrending = async (type = 'all', time = 'week') => {
+    try {
+        const URL = `${API.BASE}/trending/${type}/${time}?api_key=${API.KEY}`;
+        const data = await getData(URL);
+        return data.results;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 export const genres = {
     28: "Action",
     12: "Adventure",
@@ -62,5 +72,7 @@ export const genres = {
     37: "Western"
 }
 
-export const IMGPATH = 'https://image.tmdb.org/t/p/w500/';
-export { searchFor, getItem };
+export const IMGPATH = 'https://image.tmdb.org/t/p/w1280/';
+export const IMGPATHlow = 'https://image.tmdb.org/t/p/w300/';
+export { searchFor, getItem, getTrending };
+export { getData }; // hadi ghan7iyadha mn ba3d
