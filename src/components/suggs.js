@@ -9,12 +9,12 @@ const Suggs = ({ data, dataType }) => {
         return fullYear ? fullYear.slice(0, 4) : '';
     }
 
-    const fetchData = async () => {
-        const item = await getItem(dataType, data.id);
-        setItem(item);
-    }
-
     useEffect(() => {
+        const fetchData = async () => {
+            const item = await getItem(dataType, data.id);
+            setItem(item);
+        }
+
         fetchData();
     }, [data]);
 
