@@ -23,8 +23,11 @@ const HeaderStyled = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    & div {
-        z-index: 5;
+    background-color: #00000099;
+    box-shadow: 0px 0px 80px 80px #00000099;
+    @media (max-width: 768px){
+        box-shadow: 0px 0px 20px 20px #00000085;
+        background-color: #00000085;
     }
     `
 
@@ -69,6 +72,7 @@ const Menu = styled.div`
             color: rgba(255, 255 , 255, 0.55);
             cursor: pointer;
             &:hover{
+                text-shadow: 4px 4px 10px #11111111;
                 color: ${favoritColor};
             }
         }
@@ -119,6 +123,12 @@ const SearchBlock = styled.div`
     margin-left: auto;
     & div{
         border-radius: 10px;
+        background-color: rgba(255, 255, 255, .4);
+        & input{
+            ::placeholder{
+                color: #47474790;
+            }
+        }
     }
     &:hover,
     &:focus-within{

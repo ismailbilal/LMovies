@@ -1,47 +1,33 @@
 import React, { useEffect, useState } from 'react'
-import { getTrending, IMGPATH } from '../API';
-import { Main, Movie } from './styles/trendingStyled'
+import { getTrending } from '../API';
+import { Dots, Dot, Main } from './styles/trendingStyled'
+import TrendingMovie from './trendingMovie';
 
 function Trending() {
     const [list, setList] = useState([]);
-    const [tslt, setTslt] = useState(0);
-
-    const fetchData = async () => {
-        const movies = await getTrending();
-        setList(movies)
-        console.log(movies);
-    }
-
-    const switchMovie = () => {
-        setTslt(prev => prev < 4 ? prev + 1 : 0);
-        setTimeout(() => {
-            switchMovie();
-        }, 3000);
+    const dots = [];
+    for (let i = 0; i < 9; i++) {
+        dots.push(<Dot className='dot' />);
     }
 
     useEffect(() => {
+        const fetchData = async () => {
+            const movies = await getTrending();
+            setList(movies)
+            console.log(movies);
+        }
+
         fetchData();
-        setTimeout(() => {
-            switchMovie();
-        }, 5000);
     }, [])
 
     return (
         <Main>
             {
                 list.map((movie, key) => {
-                    return <Movie
-                        key={key}
-                        style={{
-                            background: `url(${IMGPATH + movie.backdrop_path})`,
-                            backgroundSize: '100%',
-                            backgroundPosition: 'center',
-                            left: `${key * 100}%`,
-                            transform: `translateX(${tslt * -100}%)`
-                        }}
-                    ></Movie>
+                    return <TrendingMovie key={key} movie={movie} index={key} />
                 })
             }
+            <Dots>{dots}</Dots>
         </Main>
     )
 }

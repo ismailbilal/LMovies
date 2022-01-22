@@ -40,7 +40,7 @@ const getItem = async (type, id) => {
 
 }
 
-const getTrending = async (type = 'all', time = 'week') => {
+const getTrending = async (type = 'movie', time = 'week') => {
     try {
         const URL = `${API.BASE}/trending/${type}/${time}?api_key=${API.KEY}`;
         const data = await getData(URL);
