@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getItem, IMGPATH } from '../API';
+import { getItem, IMGPATH, IMGPATHlow } from '../API';
 import star from '../images/star.svg'
 
 const Suggs = ({ data, dataType }) => {
@@ -9,16 +9,20 @@ const Suggs = ({ data, dataType }) => {
         return fullYear ? fullYear.slice(0, 4) : '';
     }
 
-    useEffect(async () => {
+    const fetchData = async () => {
         const item = await getItem(dataType, data.id);
-        console.log(item);
         setItem(item);
+    }
+
+    useEffect(() => {
+        fetchData();
     }, [data]);
 
     return (
         <aside>
             <img
-                src={IMGPATH + (item.poster_path || item.profile_path)}
+                src={(IMGPATHlow || IMGPATH) + (item.poster_path || item.profile_path)}
+                alt=' '
                 style={{
                     borderRadius: dataType === 'person' ? '50%' : '0',
                     height: dataType === 'person' ? '70px' : '90px'
@@ -31,7 +35,7 @@ const Suggs = ({ data, dataType }) => {
                 {
                     dataType !== 'person' ? <>
                         <span>
-                            <img src={star} />
+                            <img src={star} alt=' ' />
                             {item.vote_average}
                         </span>
                         <br />

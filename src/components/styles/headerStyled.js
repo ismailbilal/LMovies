@@ -23,6 +23,9 @@ const HeaderStyled = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    & div {
+        z-index: 5;
+    }
     `
 
 const MenuLogo = styled.div`
