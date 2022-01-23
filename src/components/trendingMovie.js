@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Dot, Movie } from './styles/trendingStyled';
+import { Movie } from './styles/trendingStyled';
 import { IMGPATH } from '../API';
 import { useState } from 'react';
 

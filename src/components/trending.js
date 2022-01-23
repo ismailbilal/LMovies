@@ -7,7 +7,7 @@ function Trending() {
     const [list, setList] = useState([]);
     const dots = [];
     for (let i = 0; i < 9; i++) {
-        dots.push(<Dot className='dot' />);
+        dots.push(<Dot key={i} className='dot' />);
     }
 
     useEffect(() => {
