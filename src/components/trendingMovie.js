@@ -7,10 +7,10 @@ function TrendingMovie({ movie, index }) {
     const [tslt, setTslt] = useState(0);
 
     useEffect(() => {
+        let handleClick;
         let timer;
         const timeToMove = 6000;
         const dots = document.querySelectorAll('.dot');
-        console.log(dots);
         dots[0].classList.add('orange');
 
         const switchMovie = () => {
@@ -20,17 +20,39 @@ function TrendingMovie({ movie, index }) {
                 dots[prev].classList.add('orange');
                 return prev;
             });
-            setTimeout(() => {
-                timer = switchMovie();
+            timer = setTimeout(() => {
+                switchMovie();
             }, timeToMove);
         }
 
-        setTimeout(() => {
-            timer = switchMovie();
+        timer = setTimeout(() => {
+            switchMovie();
         }, timeToMove);
+
+
+        for (let i = 0; i < dots.length; i++) {
+            const dot = dots[i];
+            handleClick = () => {
+                clearTimeout(timer);
+                setTslt(prev => {
+                    dots[prev].classList.remove('orange');
+                    dots[i].classList.add('orange');
+                    return i;
+                });
+                timer = setTimeout(() => {
+                    switchMovie();
+                }, timeToMove);
+            }
+
+            dot.addEventListener('click', handleClick)
+        }
 
         return () => {
             clearTimeout(timer);
+            for (let i = 0; i < dots.length; i++) {
+                const dot = dots[i];
+                dot.removeEventListener('click', handleClick);
+            }
         }
     }, [])
 
