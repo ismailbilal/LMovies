@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/LMovies/static/css/main.f43f9a86.chunk.css",
-    "main.js": "/LMovies/static/js/main.70520fd2.chunk.js",
-    "main.js.map": "/LMovies/static/js/main.70520fd2.chunk.js.map",
+    "main.js": "/LMovies/static/js/main.12650fb0.chunk.js",
+    "main.js.map": "/LMovies/static/js/main.12650fb0.chunk.js.map",
     "runtime-main.js": "/LMovies/static/js/runtime-main.52051682.js",
     "runtime-main.js.map": "/LMovies/static/js/runtime-main.52051682.js.map",
     "static/js/2.d4691dbd.chunk.js": "/LMovies/static/js/2.d4691dbd.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.52051682.js",
     "static/js/2.d4691dbd.chunk.js",
     "static/css/main.f43f9a86.chunk.css",
-    "static/js/main.70520fd2.chunk.js"
+    "static/js/main.12650fb0.chunk.js"
   ]
 }
