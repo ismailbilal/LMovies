@@ -8,7 +8,6 @@ const Main = styled.div`
     height: calc(50vh + 20vw);
     top: -70px;
     overflow: hidden;
-    z-index: -1;
 `
 
 const Movie = styled.div`

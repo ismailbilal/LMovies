@@ -29,6 +29,8 @@ const HeaderStyled = styled.div`
         box-shadow: 0px 0px 20px 20px #00000085;
         background-color: #00000085;
     }
+    position: relative;
+    z-index: 2;
     `
 
 const MenuLogo = styled.div`
