@@ -13,11 +13,16 @@ function TrendingMovie({ movie, index }) {
         const dots = document.querySelectorAll('.dot');
         dots[0].classList.add('orange');
 
+        const listInfo = document.querySelectorAll('.info');
+        listInfo[0].classList.add('showen');
+
         const switchMovie = () => {
             setTslt(prev => {
                 dots[prev].classList.remove('orange');
+                listInfo[prev].classList.remove('showen');
                 prev = prev < 8 ? prev + 1 : 0;
                 dots[prev].classList.add('orange');
+                listInfo[prev].classList.add('showen');
                 return prev;
             });
             timer = setTimeout(() => {
