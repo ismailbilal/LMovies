@@ -36,6 +36,7 @@ const getItem = async (type, id) => {
         return data;
     } catch (err) {
         console.log(err);
+        return [];
     }
 
 }
@@ -47,6 +48,7 @@ const getTrending = async (type = 'movie', time = 'week') => {
         return data.results;
     } catch (err) {
         console.log(err);
+        return [];
     }
 }
 
