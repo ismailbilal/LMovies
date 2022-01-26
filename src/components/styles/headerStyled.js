@@ -26,11 +26,11 @@ const HeaderStyled = styled.div`
     background-color: #00000099;
     box-shadow: 0px 0px 80px 80px #00000099;
     @media (max-width: 768px){
-        box-shadow: 0px 0px 20px 20px #00000085;
-        background-color: #00000085;
+        box-shadow: 0px 0px 20px 20px #00000065;
+        background-color: #00000065;
     }
     position: relative;
-    z-index: 2;
+    z-index: 3;
     `
 
 const MenuLogo = styled.div`
@@ -289,7 +289,7 @@ const SearchSugges = styled.div`
             border: none;
             outline: none;
             font-size: 16px;
-            color: rgba(0, 0, 0, .2);
+            color: rgba(0, 0, 0, .5);
             margin: 2px;
             cursor: pointer;
         }
