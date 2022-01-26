@@ -41,7 +41,9 @@ function TrendingMovie({ movie, index }) {
                 clearTimeout(timer);
                 setTslt(prev => {
                     dots[prev].classList.remove('orange');
+                    listInfo[prev].classList.remove('showen');
                     dots[i].classList.add('orange');
+                    listInfo[i].classList.add('showen');
                     return i;
                 });
                 timer = setTimeout(() => {
