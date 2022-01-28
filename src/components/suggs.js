@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getItem, IMGPATH, IMGPATHlow } from '../API';
-import star from '../images/star.svg'
+import star from '../images/blackStar.svg'
 
 const Suggs = ({ data, dataType }) => {
     const [item, setItem] = useState([]);

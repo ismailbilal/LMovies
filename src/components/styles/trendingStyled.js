@@ -58,21 +58,20 @@ const Dots = styled.div`
         background-color: ${favoritColor};
     }
     @media (max-width: 768px){
-        box-shadow: 0px 0px 20px 20px #00000070;
-        background-color: #00000070;
+        box-shadow: 0px 0px 50px 50px #00000040;
+        background-color: #00000040;
     }
     `
 
 const Dot = styled.div`
     background-color: #ffffff50;
     border-radius: 50%;
-    width: calc(12px + .2vw);
-    height: calc(12px + .2vw);
+    width: calc(10px + .1vw);
+    height: calc(10px + .1vw);
     cursor: pointer;
 `
 
 const Info = styled.div`
-/* border: 1px solid red; */
     position: absolute;
     top: 50%;
     color: #fff;
@@ -153,7 +152,13 @@ const Info = styled.div`
     }
     @media (max-width: 768px){
         max-width: 100%;
-        top: 30%;
+        top: 35%;
+        background-color: #00000030;
+        box-shadow: 0px 0px 5px 5px #00000050;
+        & .text{
+            -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
+        }
         & span{
             gap: 5px;
         }

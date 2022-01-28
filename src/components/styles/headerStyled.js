@@ -5,7 +5,6 @@ import logoIcon from './../../images/logo.svg';
 import loginIcon from './../../images/login.svg';
 import loginIconHover from './../../images/loginHover.svg';
 import darkSearchLogo from './../../images/search.svg';
-import whiteSearchLogo from './../../images/whiteSearch.svg';
 
 const favoritColor = '#ff6600';
 
@@ -26,8 +25,8 @@ const HeaderStyled = styled.div`
     background-color: #00000099;
     box-shadow: 0px 0px 80px 80px #00000099;
     @media (max-width: 768px){
-        box-shadow: 0px 0px 20px 20px #00000065;
-        background-color: #00000065;
+        box-shadow: 0px 0px 50px 50px #00000040;
+        background-color: #00000040;
     }
     position: relative;
     z-index: 3;
@@ -209,7 +208,7 @@ const SearchInput = styled.div`
     }
     & button{
         width: calc(1vw + 15px);
-        background-image: url(${whiteSearchLogo});
+        background-image: url(${darkSearchLogo});
         background-size: 100% 100%;
         margin-left: -5px;
         cursor: pointer;
