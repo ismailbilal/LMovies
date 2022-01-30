@@ -7,10 +7,6 @@ const RecommandedStyled = styled.div`
     padding: 10px;
     display: flex;
     flex-direction: column;
-    & hr{
-        border-color: #ffffff50;
-        margin: 0px 10px;
-    }
 `
 
 const RecHeader = styled.div`
@@ -25,6 +21,9 @@ const RecHeader = styled.div`
     & p{
         font-size: 30px;
         color: #ffffff90;
+        border-bottom: 1px solid #ffffff90;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
     }
 
 `
@@ -36,7 +35,8 @@ const TypesStyled = styled.div`
     min-width: 25%;
     align-items: center;
     margin: 0px 10px;
-    padding: -10px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
     & button{
         width: 30%;
         min-width: max-content;
@@ -72,13 +72,34 @@ const List = styled.div`
 `
 
 const Movie = styled.div`
+    font-family: Sans-serif;
     width: 200px;
+    height: max-content;
     margin: .5rem;
+    margin-top: 20px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 0px 5px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
     & img{
         width: 100%;
+        margin-bottom: 5px;
+    }
+    & h4{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+        font-weight: 100;
+        color: #fff;
+    }
+    & em{
+        font-size: calc(70% + .3vw);
     }
     @media (max-width: 768px) {
         width: 150px;
