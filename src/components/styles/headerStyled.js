@@ -5,8 +5,7 @@ import logoIcon from './../../images/logo.svg';
 import loginIcon from './../../images/login.svg';
 import loginIconHover from './../../images/loginHover.svg';
 import darkSearchLogo from './../../images/search.svg';
-
-const favoritColor = '#ff6600';
+import { favoritColor } from "./globalStyle";
 
 const showMenu = keyframes`
     from{

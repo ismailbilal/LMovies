@@ -38,7 +38,6 @@ const getItem = async (type, id) => {
         console.log(err);
         return [];
     }
-
 }
 
 const getTrending = async (type = 'movie', time = 'week') => {
@@ -46,6 +45,17 @@ const getTrending = async (type = 'movie', time = 'week') => {
         const URL = `${API.BASE}/trending/${type}/${time}?api_key=${API.KEY}`;
         const data = await getData(URL);
         return data.results;
+    } catch (err) {
+        console.log(err);
+        return [];
+    }
+}
+
+const getDiscover = async (type = 'movie', page = 1) => {
+    try {
+        const URL = `${API.BASE}/discover/${type}?api_key=${API.KEY}&sort_by=popularity.desc&page=${page}`
+        const data = await getData(URL);
+        return data.results
     } catch (err) {
         console.log(err);
         return [];
@@ -76,5 +86,5 @@ export const genres = {
 
 export const IMGPATH = 'https://image.tmdb.org/t/p/w1280/';
 export const IMGPATHlow = 'https://image.tmdb.org/t/p/w300/';
-export { searchFor, getItem, getTrending };
+export { searchFor, getItem, getTrending, getDiscover };
 export { getData }; // hadi ghan7iyadha mn ba3d

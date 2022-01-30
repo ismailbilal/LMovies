@@ -1,4 +1,5 @@
 import Header from "./components/header";
+import Recommanded from "./components/recommanded";
 import Trending from "./components/trending";
 import { StyledApp } from "./styledApp";
 
@@ -7,6 +8,7 @@ const App = () => {
     <StyledApp>
       <Header />
       <Trending />
+      <Recommanded />
     </StyledApp>
   )
 }
