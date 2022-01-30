@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { List, Movie, RecHeader, RecommandedStyled, TypesStyled } from './styles/rcdStyled'
-import { getDiscover, IMGPATH } from '../API';
+import { getDiscover, getTrending, IMGPATH } from '../API';
+import ItemInfo from './itemInfo';
 
 const Recommanded = () => {
     const [moviesList, setMoviesList] = useState([]);
-    const [moviesList2, setMoviesList2] = useState([]);
+    const [type, setType] = useState('movie');
+    const [page, setPage] = useState(1);
 
     const changeType = (element, type) => {
         const oldElement = document.querySelector('.selected');
@@ -15,11 +17,8 @@ const Recommanded = () => {
     }
 
     const fetchData = async () => {
-        const list = await getDiscover();
-        const list2 = await getDiscover('movie', 2);
-        console.log(list2);
+        const list = await getDiscover(type, page);
         setMoviesList(list);
-        setMoviesList2(list2);
     }
 
     useEffect(() => {
@@ -32,38 +31,26 @@ const Recommanded = () => {
                 <p>Recommanded</p>
                 <TypesStyled>
                     <button onClick={(event) => changeType(event.target, 'multi')} className='selected'>
-                        <i class="fas fa-video"></i>
+                        <i className="fas fa-video"></i>
                         Movies
                     </button>
                     <button onClick={(event) => changeType(event.target, 'multi')} className='hoverEvent'>
-                        <i class="fas fa-list-ul"></i>
+                        <i className="fas fa-list-ul"></i>
                         TV Show
                     </button>
                     <button onClick={(event) => changeType(event.target, 'multi')} className='hoverEvent'>
-                        <i class="fas fa-chart-line"></i>
+                        <i className="fas fa-chart-line"></i>
                         Trinding
                     </button>
                 </TypesStyled>
             </RecHeader>
-            <hr />
             <List>
                 {
                     moviesList.map((movie, index) => {
                         return <Movie key={index}>
                             <img src={IMGPATH + movie.poster_path} />
-                            <p>{movie.vote_average}</p>
-                            <p>{movie.popularity}</p>
-                            <p>{movie.release_date}</p>
-                        </Movie>
-                    })
-                }
-                {
-                    moviesList2.map((movie, index) => {
-                        return <Movie key={index}>
-                            <img src={IMGPATH + movie.poster_path} />
-                            <p>{movie.vote_average}</p>
-                            <p>{movie.popularity}</p>
-                            <p>{movie.release_date}</p>
+                            <h4>{movie.name || movie.title}</h4>
+                            <ItemInfo item={movie} type={movie.media_type || type}></ItemInfo>
                         </Movie>
                     })
                 }
