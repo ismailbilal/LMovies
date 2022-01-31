@@ -6,6 +6,8 @@ import ItemInfo from './itemInfo';
 const Recommanded = () => {
     const [moviesList, setMoviesList] = useState([]);
     const [type, setType] = useState('movie');
+    const [isTrend, setIsTrend] = useState(false);
+    const [page, setPage] = useState(2);
 
     const fetchMovies = async () => {
         document.querySelector('.selected').classList.add('hoverEvent');
@@ -13,10 +15,10 @@ const Recommanded = () => {
         document.querySelector('.movie').classList.remove('hoverEvent');
         document.querySelector('.movie').classList.add('selected');
         const list = await getDiscover('movie', 1);
-        const list2 = await getDiscover('movie', 2);
         setMoviesList(list);
-        setMoviesList(prev => [...prev, ...list2]);
         setType('movie');
+        setIsTrend(false);
+        setPage(1);
     }
 
     const fetchTv = async () => {
@@ -25,10 +27,10 @@ const Recommanded = () => {
         document.querySelector('.tv').classList.remove('hoverEvent');
         document.querySelector('.tv').classList.add('selected');
         const list = await getDiscover('tv', 1);
-        const list2 = await getDiscover('tv', 2);
         setMoviesList(list);
-        setMoviesList(prev => [...prev, ...list2]);
         setType('tv');
+        setIsTrend(false);
+        setPage(1);
     }
 
     const fetchTrending = async () => {
@@ -37,9 +39,15 @@ const Recommanded = () => {
         document.querySelector('.trend').classList.remove('hoverEvent');
         document.querySelector('.trend').classList.add('selected');
         const list = await getTrending('all', 'day', 1);
-        const list2 = await getTrending('all', 'day', 2);
         setMoviesList(list);
-        setMoviesList(prev => [...prev, ...list2]);
+        setIsTrend(true);
+        setPage(1);
+    }
+
+    const loadMore = async () => {
+        const list = isTrend ? await getTrending('all', 'day', page + 1)
+            : await getDiscover(type, page + 1);
+        setMoviesList(prev => [...prev, ...list]);
     }
 
     useEffect(() => {
@@ -79,6 +87,7 @@ const Recommanded = () => {
                     })
                 }
             </List>
+            <button className='loadmore hoverEvent' onClick={loadMore}>load more</button>
         </RecommandedStyled>
     )
 }
