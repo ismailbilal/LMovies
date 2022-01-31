@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { List, Movie, RecHeader, RecommandedStyled, TypesStyled } from './styles/rcdStyled'
 import { getDiscover, getTrending, IMGPATH } from '../API';
 import ItemInfo from './itemInfo';
-import { render } from '@testing-library/react';
 
 const Recommanded = () => {
     const [moviesList, setMoviesList] = useState([]);
     const [type, setType] = useState('movie');
-    const [page, setPage] = useState(1);
 
     const fetchMovies = async () => {
         document.querySelector('.selected').classList.add('hoverEvent');
@@ -74,7 +72,7 @@ const Recommanded = () => {
                 {
                     moviesList.map((movie, index) => {
                         return <Movie key={index}>
-                            <img src={IMGPATH + movie.poster_path} />
+                            <img src={IMGPATH + movie.poster_path} alt=' ' />
                             <h4>{movie.name || movie.title}</h4>
                             <ItemInfo item={movie} type={movie.media_type || type}></ItemInfo>
                         </Movie>

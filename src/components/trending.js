@@ -45,7 +45,7 @@ function Trending() {
                             <p>
                                 {
                                     movie.genres.slice(0, 2).map((genre, index2) => {
-                                        return <em key={index2}><div className='geDot'></div>{genre.name.split(" ")[0]}</em>
+                                        return <em key={index2}><i className="fas fa-circle"></i>{genre.name.split(" ")[0]}</em>
                                     })
                                 }
                             </p>

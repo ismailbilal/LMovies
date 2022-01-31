@@ -14,7 +14,7 @@ const Item = styled.div`
             transform: scale(.79);
         }
     }
-
+    margin-bottom: 5px;
 `
 
 export { Item }

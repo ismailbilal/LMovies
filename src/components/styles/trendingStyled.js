@@ -130,14 +130,8 @@ const Info = styled.div`
                 width: 14px;
                 height: 14px;
             }
-            & .geDot{
-                background: none;
-                background-color: rgba(255, 255, 255, .9);
-                border-radius: 50%;
-                width: 5px;
-                height: 5px;
-                margin: 3px;
-                margin-left: 0px;
+            & .fa-circle{
+                transform: scale(.4);
             }
         }
     }

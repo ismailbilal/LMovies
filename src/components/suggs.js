@@ -16,7 +16,7 @@ const Suggs = ({ data, dataType }) => {
         }
 
         fetchData();
-    }, [data]);
+    }, [data, dataType]);
 
     return (
         <aside>
