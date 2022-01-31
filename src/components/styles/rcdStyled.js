@@ -7,6 +7,30 @@ const RecommandedStyled = styled.div`
     padding: 10px;
     display: flex;
     flex-direction: column;
+    & button{
+        width: 30%;
+        min-width: max-content;
+        border: none;
+        background-color: rgb(30, 30, 30);
+        color: #ffffff95;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 0 5px;
+        & .fas{
+            margin-right: 5px;
+        }
+    }
+    & .loadmore{
+        width: 80%;
+        height: 30px;
+        align-self: center;
+    }
+    & .hoverEvent{
+        &:hover{
+            background-color: rgb(40, 40,40);
+            color: #ffffff;
+        }
+    }
 `
 
 const RecHeader = styled.div`
@@ -37,25 +61,6 @@ const TypesStyled = styled.div`
     margin: 0px 10px;
     padding-bottom: 10px;
     margin-bottom: 14px;
-    & button{
-        width: 30%;
-        min-width: max-content;
-        border: none;
-        background-color: rgb(25, 25, 25);
-        color: #ffffff95;
-        border-radius: 5px;
-        padding: 5px 10px;
-        margin: 0 5px;
-        & .fas{
-            margin-right: 5px;
-        }
-    }
-    & .hoverEvent{
-        &:hover{
-            background-color: rgb(40, 40,40);
-            color: #ffffff;
-        }
-    }
     & .selected{
         background-color: ${favoritColor};
         color: #ffffff;
