@@ -74,6 +74,7 @@ const List = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 15px;
 `
 
 const Movie = styled.div`
