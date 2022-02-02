@@ -1,16 +1,26 @@
-import Header from "./components/header";
-import Recommanded from "./components/recommanded";
-import Trending from "./components/trending";
-import { StyledApp } from "./styledApp";
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom'
+import Header from './components/header'
+import Home from './components/home'
+import Movie from './components/movie'
 
 const App = () => {
   return (
-    <StyledApp>
+    <Router>
       <Header />
-      <Trending />
-      <Recommanded />
-    </StyledApp>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/:type/:id" element={<Movie />} />
+        <Route path="/par" element={<Par />} />
+      </Routes>
+    </Router>
   )
 }
 
-export default App;
+const Par = () => {
+  return (
+    <p>helllo worldd</p>
+  )
+}
+
+export default App

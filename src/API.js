@@ -86,5 +86,6 @@ export const genres = {
 
 export const IMGPATH = 'https://image.tmdb.org/t/p/w1280/';
 export const IMGPATHlow = 'https://image.tmdb.org/t/p/w300/';
+export const VDPATH = 'https://www.youtube.com/watch?v=';
 export { searchFor, getItem, getTrending, getDiscover };
 export { getData }; // hadi ghan7iyadha mn ba3d

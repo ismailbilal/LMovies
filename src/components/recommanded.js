@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { List, Movie, RecHeader, RecommandedStyled, TypesStyled } from './styles/rcdStyled'
 import { getDiscover, getTrending, IMGPATH } from '../API';
 import ItemInfo from './itemInfo';
+import { Link } from 'react-router-dom';
 
 const Recommanded = () => {
     const [moviesList, setMoviesList] = useState([]);
@@ -79,16 +80,20 @@ const Recommanded = () => {
             <List>
                 {
                     moviesList.map((movie, index) => {
-                        return <Movie key={index}>
-                            <img src={IMGPATH + movie.poster_path} alt=' ' />
-                            <h4>{movie.name || movie.title}</h4>
-                            <ItemInfo item={movie} type={movie.media_type || type}></ItemInfo>
-                        </Movie>
+                        return (
+                            <Link key={index} to={`/${movie.media_type || type}/${movie.id}`} >
+                                <Movie>
+                                    <img src={IMGPATH + movie.poster_path} alt=' ' />
+                                    <h4>{movie.name || movie.title}</h4>
+                                    <ItemInfo item={movie} type={movie.media_type || type}></ItemInfo>
+                                </Movie>
+                            </Link>
+                        )
                     })
                 }
             </List>
             <button className='loadmore hoverEvent' onClick={loadMore}>load more</button>
-        </RecommandedStyled>
+        </RecommandedStyled >
     )
 }
 

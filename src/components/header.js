@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { searchFor } from "../API";
 import { HeaderStyled, Logo, Menu, MenuLogo, LoginStyled, SearchBlock, SearchInput, SearchSugges } from "./styles/headerStyled";
 import Suggs from "./suggs";
@@ -34,7 +35,7 @@ const Header = () => {
             <Menu>
                 <MenuLogo />
                 <ul>
-                    <li>Home</li>
+                    <Link to='/'><li>Home</li></Link>
                     <li>Genre</li>
                     <li>Movies</li>
                     <li>Tv-Series</li>
