@@ -49,6 +49,7 @@ const Recommanded = () => {
         const list = isTrend ? await getTrending('all', 'day', page + 1)
             : await getDiscover(type, page + 1);
         setMoviesList(prev => [...prev, ...list]);
+        setPage(prev => prev + 1);
     }
 
     useEffect(() => {
