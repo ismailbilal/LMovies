@@ -7,7 +7,6 @@ function TrendingMovie({ movie, index }) {
     const [tslt, setTslt] = useState(0);
 
     useEffect(() => {
-        let handleClick;
         let timer;
         const timeToMove = 6000;
         const dots = document.querySelectorAll('.dot');
@@ -34,31 +33,30 @@ function TrendingMovie({ movie, index }) {
             switchMovie();
         }, timeToMove);
 
+        const handleClick = (e, i) => {
+            clearTimeout(timer);
+            setTslt(prev => {
+                dots[prev].classList.remove('orange');
+                listInfo[prev].classList.remove('showen');
+                dots[i].classList.add('orange');
+                listInfo[i].classList.add('showen');
+                return i;
+            });
+            timer = setTimeout(() => {
+                switchMovie();
+            }, timeToMove);
+        }
 
         for (let i = 0; i < dots.length; i++) {
             const dot = dots[i];
-            handleClick = () => {
-                clearTimeout(timer);
-                setTslt(prev => {
-                    dots[prev].classList.remove('orange');
-                    listInfo[prev].classList.remove('showen');
-                    dots[i].classList.add('orange');
-                    listInfo[i].classList.add('showen');
-                    return i;
-                });
-                timer = setTimeout(() => {
-                    switchMovie();
-                }, timeToMove);
-            }
-
-            dot.addEventListener('click', handleClick)
+            dot.addEventListener('click', e => handleClick(e, i))
         }
 
         return () => {
             clearTimeout(timer);
             for (let i = 0; i < dots.length; i++) {
                 const dot = dots[i];
-                dot.removeEventListener('click', handleClick);
+                dot.removeEventListener('click', e => handleClick(e, i));
             }
         }
     }, [])

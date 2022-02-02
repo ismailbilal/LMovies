@@ -43,7 +43,7 @@ const Movie = () => {
                         </span>
                         <span>
                             <Canvas average={movie.vote_average} />
-                            <a href='#'>
+                            <a href='#sec'>
                                 <button>
                                     <i className="fas fa-play"></i>
                                     Play Trailer
@@ -56,8 +56,8 @@ const Movie = () => {
                     </InfoStyled>
                 </div>
             </PriInfoStyled>
-            {/* <SecInfoStyled>
-            </SecInfoStyled> */}
+            <SecInfoStyled id='sec'>
+            </SecInfoStyled>
         </MovieStyled>
     )
 }
