@@ -1,26 +1,21 @@
 {
   "files": {
-    "main.css": "/LMovies/static/css/main.d85a0edf.chunk.css",
-    "main.js": "/LMovies/static/js/main.25beba45.chunk.js",
-    "main.js.map": "/LMovies/static/js/main.25beba45.chunk.js.map",
-    "runtime-main.js": "/LMovies/static/js/runtime-main.52051682.js",
-    "runtime-main.js.map": "/LMovies/static/js/runtime-main.52051682.js.map",
-    "static/js/2.2b4136a3.chunk.js": "/LMovies/static/js/2.2b4136a3.chunk.js",
-    "static/js/2.2b4136a3.chunk.js.map": "/LMovies/static/js/2.2b4136a3.chunk.js.map",
+    "main.css": "/LMovies/static/css/main.e84b7c42.chunk.css",
+    "main.js": "/LMovies/static/js/main.99fd89a4.chunk.js",
+    "main.js.map": "/LMovies/static/js/main.99fd89a4.chunk.js.map",
+    "runtime~main.js": "/LMovies/static/js/runtime~main.f674f977.js",
+    "runtime~main.js.map": "/LMovies/static/js/runtime~main.f674f977.js.map",
+    "static/js/2.49281f95.chunk.js": "/LMovies/static/js/2.49281f95.chunk.js",
+    "static/js/2.49281f95.chunk.js.map": "/LMovies/static/js/2.49281f95.chunk.js.map",
     "index.html": "/LMovies/index.html",
-    "static/css/main.d85a0edf.chunk.css.map": "/LMovies/static/css/main.d85a0edf.chunk.css.map",
-    "static/js/2.2b4136a3.chunk.js.LICENSE.txt": "/LMovies/static/js/2.2b4136a3.chunk.js.LICENSE.txt",
-    "static/media/blackStar.57634606.svg": "/LMovies/static/media/blackStar.57634606.svg",
-    "static/media/login.92a47941.svg": "/LMovies/static/media/login.92a47941.svg",
-    "static/media/loginHover.0927c50f.svg": "/LMovies/static/media/loginHover.0927c50f.svg",
-    "static/media/logo.bd9cfa93.svg": "/LMovies/static/media/logo.bd9cfa93.svg",
-    "static/media/search.ccbe27b7.svg": "/LMovies/static/media/search.ccbe27b7.svg",
-    "static/media/star.dd17d69a.svg": "/LMovies/static/media/star.dd17d69a.svg"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.52051682.js",
-    "static/js/2.2b4136a3.chunk.js",
-    "static/css/main.d85a0edf.chunk.css",
-    "static/js/main.25beba45.chunk.js"
-  ]
+    "precache-manifest.a3bcaa1262458985cf175de0802dabae.js": "/LMovies/precache-manifest.a3bcaa1262458985cf175de0802dabae.js",
+    "service-worker.js": "/LMovies/service-worker.js",
+    "static/css/main.e84b7c42.chunk.css.map": "/LMovies/static/css/main.e84b7c42.chunk.css.map",
+    "static/media/blackStar.svg": "/LMovies/static/media/blackStar.d4691240.svg",
+    "static/media/login.svg": "/LMovies/static/media/login.1926d467.svg",
+    "static/media/loginHover.svg": "/LMovies/static/media/loginHover.b1e23b4f.svg",
+    "static/media/logo.svg": "/LMovies/static/media/logo.1b5d19d4.svg",
+    "static/media/search.svg": "/LMovies/static/media/search.63152d2c.svg",
+    "static/media/star.svg": "/LMovies/static/media/star.93cc2ae7.svg"
+  }
 }

@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,EACI,QAAS,CACT,SAAU,CACV,qBACJ,CACA,KACI,mBAAoB,CACpB,qBACJ","file":"main.d85a0edf.chunk.css","sourcesContent":["*{\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\nbody{\n    font-family: inherit;\n    background-color: #111;\n}"]}
