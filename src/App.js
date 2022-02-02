@@ -11,15 +11,8 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/:type/:id" element={<Movie />} />
-        <Route path="/par" element={<Par />} />
       </Routes>
     </Router>
-  )
-}
-
-const Par = () => {
-  return (
-    <p>helllo worldd</p>
   )
 }
 
