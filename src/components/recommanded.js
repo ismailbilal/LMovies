@@ -82,13 +82,13 @@ const Recommanded = () => {
                 {
                     moviesList.map((movie, index) => {
                         return (
-                            <Link key={index} to={`/${movie.media_type || type}/${movie.id}`} >
-                                <Movie>
+                            <Movie key={index}>
+                                <Link to={`/${movie.media_type || type}/${movie.id}`} >
                                     <img src={IMGPATH + movie.poster_path} alt=' ' />
-                                    <h4>{movie.name || movie.title}</h4>
-                                    <ItemInfo item={movie} type={movie.media_type || type}></ItemInfo>
-                                </Movie>
-                            </Link>
+                                </Link>
+                                <h4>{movie.name || movie.title}</h4>
+                                <ItemInfo item={movie} type={movie.media_type || type}></ItemInfo>
+                            </Movie>
                         )
                     })
                 }
