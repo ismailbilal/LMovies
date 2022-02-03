@@ -24,6 +24,7 @@ const Canvas = ({ average }) => {
         const context = canvas.getContext('2d')
 
         const draw = ctx => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();
             ctx.arc(30, 30, 24, 1.5 * Math.PI, 1.5 * Math.PI + average * 0.2 * Math.PI);
             ctx.strokeStyle = getColor(average);
