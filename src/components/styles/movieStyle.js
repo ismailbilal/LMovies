@@ -8,12 +8,9 @@ const MovieStyled = styled.div`
     align-items: center;
     font-family: sans-serif;
     width: 100%;
-    position: relative;
 `
 
 const PriInfoStyled = styled.div`
-    position: absolute;
-    top: 0;
     width: 100vw;
     & .backgr{
         padding: 3rem;
