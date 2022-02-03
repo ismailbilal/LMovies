@@ -34,12 +34,17 @@ const Movie = () => {
                 <div className='backgr'>
                     <img src={movie.poster_path ? IMGPATH + movie.poster_path : ''} alt=' ' />
                     <InfoStyled>
-                        <h1>{movie.title || movie.name} <em>({extYear(movie.release_date)})</em></h1>
+                        <h1>{movie.title || movie.name} <em>({extYear(movie.release_date || movie.first_air_date)})</em></h1>
                         <span className='genres'>{
                             genres.map((genre, index) => {
                                 return <em key={index}><i className="fas fa-circle"></i>{genre.name}</em>
                             })}
-                            <em><i className='fas fa-circle'></i>{movie.runtime} min</em>
+                            {
+                                movie.runtime ? <em><i className="fas fa-circle"></i>{movie.runtime + " min"}</em>
+                                    : <><em><i className="fas fa-circle"></i>{"SS " + movie.number_of_seasons}</em>
+                                        <em><i className="fas fa-circle"></i>{"EP " + movie.number_of_episodes}</em>
+                                    </>
+                            }
                         </span>
                         <span>
                             <Canvas average={movie.vote_average} />
@@ -58,7 +63,7 @@ const Movie = () => {
             </PriInfoStyled>
             <SecInfoStyled id='sec'>
             </SecInfoStyled>
-        </MovieStyled>
+        </MovieStyled >
     )
 }
 
