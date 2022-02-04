@@ -88,12 +88,11 @@ const SecInfoStyled = styled.div`
     padding: 1rem 2.5rem;
     .seasons{
         .seasss{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
             overflow: auto;
-            gap: 1rem;
+            white-space: nowrap;
             .season{
+                display: inline-block;
+                margin: 0 5px;
                 width: 150px;
                 border-radius: 5px;
                 overflow: hidden;
@@ -105,6 +104,20 @@ const SecInfoStyled = styled.div`
                     flex-direction: row;
                     justify-content: flex-start;
                     gap: 10px;
+                }
+            }
+            ::-webkit-scrollbar{
+                width: 5px;
+            }
+            ::-webkit-scrollbar-track{
+                border-radius: 10px;
+                background-color: #000;
+            }
+            ::-webkit-scrollbar-thumb{
+                background-color: rgb(30, 30, 30);
+                border-radius: 10px;
+                :hover{
+                    background-color: rgb(50, 50, 50);
                 }
             }
         }
