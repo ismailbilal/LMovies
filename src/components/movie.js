@@ -76,7 +76,7 @@ const Movie = () => {
                                         <img src={`${IMGPATH + season.poster_path}`} alt=' ' />
                                         <span>
                                             <em>{season.name}</em>
-                                            <em>{'(' + season.air_date.slice(0, 4) + ')'}</em>
+                                            <em>{'(' + extYear(season.air_date) + ')'}</em>
                                         </span>
                                     </div>
                                 })
