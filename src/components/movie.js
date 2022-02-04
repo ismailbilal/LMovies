@@ -8,6 +8,7 @@ const Movie = () => {
     const { id, type } = useParams();
     const [movie, setMovie] = useState({});
     const [genres, setGenres] = useState([]);
+    const [seasons, setSeasons] = useState([]);
 
     const extYear = (date) => {
         return date ? date.slice(0, 4) : '';
@@ -17,6 +18,9 @@ const Movie = () => {
         const fetchData = async () => {
             const mv = await getItem(type, id);
             console.log(mv);
+            if (type === 'tv') {
+                setSeasons(mv.seasons);
+            }
             setMovie(mv);
             setGenres(mv.genres);
         }
@@ -62,6 +66,24 @@ const Movie = () => {
                 </div>
             </PriInfoStyled>
             <SecInfoStyled id='sec'>
+                {
+                    type === 'tv' ? <div className='seasons'>
+                        <h2>Seasons</h2>
+                        <div className='seasss'>
+                            {
+                                seasons.map((season, index) => {
+                                    return <div key={index} className='season'>
+                                        <img src={`${IMGPATH + season.poster_path}`} alt=' ' />
+                                        <span>
+                                            <em>{season.name}</em>
+                                            <em>{'(' + season.air_date.slice(0, 4) + ')'}</em>
+                                        </span>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div> : ""
+                }
             </SecInfoStyled>
         </MovieStyled >
     )
