@@ -11,7 +11,7 @@ const MovieStyled = styled.div`
 `
 
 const PriInfoStyled = styled.div`
-    width: 100vw;
+    width: 100%;
     & .backgr{
         padding: 3rem;
         width: 100%;
@@ -28,9 +28,6 @@ const PriInfoStyled = styled.div`
         }
     }
 `
-
-const SecInfoStyled = styled.div`
-    `
 
 const InfoStyled = styled.div`
     display: flex;
@@ -82,6 +79,35 @@ const InfoStyled = styled.div`
     p{
         margin-top: -1.5rem;
         color: rgba(255, 255, 255, .8);
+    }
+    `
+
+const SecInfoStyled = styled.div`
+    width: 100%;
+    color: rgba(255, 255, 255, .8);
+    padding: 1rem 2.5rem;
+    .seasons{
+        .seasss{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow: auto;
+            gap: 1rem;
+            .season{
+                width: 150px;
+                border-radius: 5px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+                span{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 10px;
+                }
+            }
+        }
     }
 `
 
