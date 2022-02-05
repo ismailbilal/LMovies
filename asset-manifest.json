@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/LMovies/static/css/main.e84b7c42.chunk.css",
-    "main.js": "/LMovies/static/js/main.5ebcfd82.chunk.js",
-    "main.js.map": "/LMovies/static/js/main.5ebcfd82.chunk.js.map",
+    "main.js": "/LMovies/static/js/main.21f68979.chunk.js",
+    "main.js.map": "/LMovies/static/js/main.21f68979.chunk.js.map",
     "runtime~main.js": "/LMovies/static/js/runtime~main.f674f977.js",
     "runtime~main.js.map": "/LMovies/static/js/runtime~main.f674f977.js.map",
     "static/js/2.f1ea8759.chunk.js": "/LMovies/static/js/2.f1ea8759.chunk.js",
     "static/js/2.f1ea8759.chunk.js.map": "/LMovies/static/js/2.f1ea8759.chunk.js.map",
     "index.html": "/LMovies/index.html",
-    "precache-manifest.14df0a40bf268d96d33f09ac1964a358.js": "/LMovies/precache-manifest.14df0a40bf268d96d33f09ac1964a358.js",
+    "precache-manifest.1bc902c3e33080d490e8a24664557fe9.js": "/LMovies/precache-manifest.1bc902c3e33080d490e8a24664557fe9.js",
     "service-worker.js": "/LMovies/service-worker.js",
     "static/css/main.e84b7c42.chunk.css.map": "/LMovies/static/css/main.e84b7c42.chunk.css.map",
     "static/media/blackStar.svg": "/LMovies/static/media/blackStar.d4691240.svg",
