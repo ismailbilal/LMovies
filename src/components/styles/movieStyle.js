@@ -27,6 +27,12 @@ const PriInfoStyled = styled.div`
             border-radius: 10px;
         }
     }
+    @media (max-width: 768px){
+        .backgr{
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
 `
 
 const InfoStyled = styled.div`
@@ -41,7 +47,9 @@ const InfoStyled = styled.div`
     span{
         display: flex;
         flex-direction: row;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         gap: 10px;
         .fa-circle{
             transform: scale(.3);
@@ -72,6 +80,9 @@ const InfoStyled = styled.div`
     .genres{
         margin-top: -20px;
         color: rgba(255, 255, 255, .8);
+        .far {
+            margin-right: 5px;
+        }
     }
     .tag{
         color: rgba(255, 255, 255, .7);
@@ -80,7 +91,9 @@ const InfoStyled = styled.div`
         margin-top: -1.5rem;
         color: rgba(255, 255, 255, .8);
     }
-    `
+    @media (max-width: 768px){
+    }
+`
 
 const SecInfoStyled = styled.div`
     width: 100%;

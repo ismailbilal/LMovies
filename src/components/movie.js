@@ -33,7 +33,8 @@ const Movie = () => {
             <PriInfoStyled style={{
                 background: movie.backdrop_path ? `url(${IMGPATH + movie.backdrop_path})` : '#fff',
                 backgroundSize: movie.backdrop_path ? 'cover' : 'none',
-                backgroundPosition: movie.backdrop_path ? 'center' : 'none'
+                backgroundPosition: movie.backdrop_path ? 'center' : 'none',
+                backgroundRepeat: 'no-repeat'
             }}>
                 <div className='backgr'>
                     <img src={movie.poster_path ? IMGPATH + movie.poster_path : ''} alt=' ' />
@@ -44,7 +45,7 @@ const Movie = () => {
                                 return <em key={index}><i className="fas fa-circle"></i>{genre.name}</em>
                             })}
                             {
-                                movie.runtime ? <em><i className="fas fa-circle"></i>{movie.runtime + " min"}</em>
+                                movie.runtime ? <em><i className="far fa-clock"></i>{movie.runtime + " min"}</em>
                                     : <><em><i className="fas fa-circle"></i>{"SS " + movie.number_of_seasons}</em>
                                         <em><i className="fas fa-circle"></i>{"EP " + movie.number_of_episodes}</em>
                                     </>
