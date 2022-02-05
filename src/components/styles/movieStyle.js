@@ -47,7 +47,6 @@ const InfoStyled = styled.div`
     span{
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         gap: 10px;
@@ -92,8 +91,9 @@ const InfoStyled = styled.div`
         color: rgba(255, 255, 255, .8);
     }
     @media (max-width: 768px){
+        justify-content: center;
     }
-`
+    `
 
 const SecInfoStyled = styled.div`
     width: 100%;
