@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { InfoStyled, MovieStyled, PriInfoStyled, SecInfoStyled } from './styles/movieStyle'
-import { getItem, IMGPATH } from '../API';
+import { getItem, IMGPATH, VDPATH } from '../API';
 import Canvas from './canvas';
 import { useParams } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ const Movie = () => {
     const [movie, setMovie] = useState({});
     const [genres, setGenres] = useState([]);
     const [seasons, setSeasons] = useState([]);
+    const [trailer, setTrailer] = useState('');
 
     const extYear = (date) => {
         return date ? date.slice(0, 4) : '';
@@ -23,6 +24,8 @@ const Movie = () => {
             }
             setMovie(mv);
             setGenres(mv.genres);
+            console.log(mv.videos.results[0].key);
+            setTrailer(mv.videos.results[mv.videos.results.length - 1].key);
         }
 
         fetchData();
@@ -34,7 +37,7 @@ const Movie = () => {
                 background: movie.backdrop_path ? `url(${IMGPATH + movie.backdrop_path})` : '#fff',
                 backgroundSize: movie.backdrop_path ? 'cover' : 'none',
                 backgroundPosition: movie.backdrop_path ? 'center' : 'none',
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: movie.backdrop_path ? 'no-repeat' : 'repeat'
             }}>
                 <div className='backgr'>
                     <img src={movie.poster_path ? IMGPATH + movie.poster_path : ''} alt=' ' />
@@ -53,7 +56,7 @@ const Movie = () => {
                         </span>
                         <span>
                             <Canvas average={movie.vote_average} />
-                            <a href='#sec'>
+                            <a href='#trailer'>
                                 <button>
                                     <i className="fas fa-play"></i>
                                     Play Trailer
@@ -66,7 +69,7 @@ const Movie = () => {
                     </InfoStyled>
                 </div>
             </PriInfoStyled>
-            <SecInfoStyled id='sec'>
+            <SecInfoStyled>
                 {
                     type === 'tv' ? <div className='seasons'>
                         <h2>Seasons</h2>
@@ -74,7 +77,7 @@ const Movie = () => {
                             {
                                 seasons.map((season, index) => {
                                     return <div key={index} className='season'>
-                                        <img src={`${IMGPATH + season.poster_path}`} alt=' ' />
+                                        <img src={IMGPATH + season.poster_path} alt=' ' />
                                         <span>
                                             <em>{season.name}</em>
                                             <em>{'(' + extYear(season.air_date) + ')'}</em>
@@ -85,6 +88,12 @@ const Movie = () => {
                         </div>
                     </div> : ""
                 }
+                <iframe
+                    id='trailer'
+                    className='trailer' src={VDPATH + trailer}
+                    allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
+                >
+                </iframe>
             </SecInfoStyled>
         </MovieStyled >
     )
