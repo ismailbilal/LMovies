@@ -15,6 +15,11 @@ const Movie = () => {
         return date ? date.slice(0, 4) : '';
     }
 
+    const playTrailer = () => {
+        const ifr = document.querySelector('#trailer');
+        ifr.src += '?autoplay=1';
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             const mv = await getItem(type, id);
@@ -56,7 +61,7 @@ const Movie = () => {
                         <span>
                             <Canvas average={movie.vote_average} />
                             <a href='#trailer'>
-                                <button>
+                                <button onClick={playTrailer}>
                                     <i className="fas fa-play"></i>
                                     Play Trailer
                                 </button>
