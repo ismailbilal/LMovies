@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { InfoStyled, MovieStyled, PriInfoStyled, SecInfoStyled } from './styles/movieStyle'
-import { getItem, IMGPATH, VDPATH } from '../API';
+import { InfoStyled, MovieStyled, PriInfoStyled, SecInfoStyled, TrailerStyled } from './styles/movieStyle'
+import { getItem, IMGPATH, IMGPATHlow, VDPATH } from '../API';
 import Canvas from './canvas';
 import { useParams } from 'react-router-dom';
 
@@ -24,7 +24,6 @@ const Movie = () => {
             }
             setMovie(mv);
             setGenres(mv.genres);
-            console.log(mv.videos.results[0].key);
             setTrailer(mv.videos.results[mv.videos.results.length - 1].key);
         }
 
@@ -32,7 +31,7 @@ const Movie = () => {
     }, [id, type]);
 
     return (
-        <MovieStyled>
+        <MovieStyled id='main'>
             <PriInfoStyled style={{
                 background: movie.backdrop_path ? `url(${IMGPATH + movie.backdrop_path})` : '#fff',
                 backgroundSize: movie.backdrop_path ? 'cover' : 'none',
@@ -70,30 +69,41 @@ const Movie = () => {
                 </div>
             </PriInfoStyled>
             <SecInfoStyled>
-                {
-                    type === 'tv' ? <div className='seasons'>
-                        <h2>Seasons</h2>
-                        <div className='seasss'>
-                            {
-                                seasons.map((season, index) => {
-                                    return <div key={index} className='season'>
-                                        <img src={IMGPATH + season.poster_path} alt=' ' />
-                                        <span>
-                                            <em>{season.name}</em>
-                                            <em>{'(' + extYear(season.air_date) + ')'}</em>
-                                        </span>
-                                    </div>
-                                })
-                            }
-                        </div>
-                    </div> : ""
-                }
-                <iframe
-                    id='trailer'
-                    className='trailer' src={VDPATH + trailer}
-                    allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
-                >
-                </iframe>
+                <div className='cont'>
+                    {
+                        type === 'tv' ? <div className='seasons'>
+                            <h2>Seasons</h2>
+                            <div className='seasss'>
+                                {
+                                    seasons.map((season, index) => {
+                                        return <div key={index} className='season'>
+                                            <img src={IMGPATHlow + season.poster_path} alt=' ' />
+                                            <span>
+                                                <em>{season.name}</em>
+                                                <em>{'(' + extYear(season.air_date) + ')'}</em>
+                                            </span>
+                                        </div>
+                                    })
+                                }
+                            </div>
+                        </div> : ""
+                    }
+                    <TrailerStyled>
+                        <iframe
+                            id='trailer'
+                            className='trai'
+                            title='Trailer'
+                            src={VDPATH + trailer}
+                            allowFullScreen={true}
+                            webkitallowfullscreen="true"
+                            mozallowfullscreen="true"
+                        >
+                        </iframe>
+                    </TrailerStyled>
+                </div>
+                <div className='sosia'>
+
+                </div>
             </SecInfoStyled>
         </MovieStyled >
     )

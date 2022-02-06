@@ -98,43 +98,90 @@ const InfoStyled = styled.div`
 const SecInfoStyled = styled.div`
     width: 100%;
     color: rgba(255, 255, 255, .8);
-    padding: 1rem 2.5rem;
-    .seasons{
-        .seasss{
-            overflow: auto;
-            white-space: nowrap;
-            .season{
-                display: inline-block;
-                margin: 0 5px;
-                width: 150px;
-                border-radius: 5px;
-                overflow: hidden;
-                img{
-                    width: 100%;
+    padding: 3vw;
+    display: flex;
+    flex-direction: row;
+    .cont{
+        width: 70%;
+        .seasons{
+            margin-bottom: 2rem;
+            .seasss{
+                overflow: auto;
+                white-space: nowrap;
+                .season{
+                    display: inline-block;
+                    margin: 0 5px;
+                    width: 150px;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                    }
+                    span{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        gap: 10px;
+                    }
                 }
-                span{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    gap: 10px;
+                ::-webkit-scrollbar{
+                    width: 5px;
                 }
-            }
-            ::-webkit-scrollbar{
-                width: 5px;
-            }
-            ::-webkit-scrollbar-track{
-                border-radius: 10px;
-                background-color: #000;
-            }
-            ::-webkit-scrollbar-thumb{
-                background-color: rgb(30, 30, 30);
-                border-radius: 10px;
-                :hover{
-                    background-color: rgb(50, 50, 50);
+                ::-webkit-scrollbar-track{
+                    border-radius: 10px;
+                    background-color: #000;
+                }
+                ::-webkit-scrollbar-thumb{
+                    background-color: ${favoritColor};
+                    border-radius: 10px;
+                    :hover{
+                        background-color: ${favoritColor + 90};
+                    }
                 }
             }
         }
     }
+    .sosia{
+        width: 30%;
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        .cont{
+            width: 100%;
+        }
+        .sosia{
+            width: 100%;
+        }
+    }
 `
 
-export { MovieStyled, PriInfoStyled, SecInfoStyled, InfoStyled }
+const TrailerStyled = styled.div`
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 57%;
+    .trai{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 90%;
+        height: 90%;
+        margin: auto;
+        border: none;
+    }
+    h2{
+        position: absolute;
+        top: 0;
+        left: 50px;
+    }
+    @media (max-width: 768px) {
+        .trai{
+            width: 100%;
+            height: 100%;
+        }
+    }
+`
+
+export { MovieStyled, PriInfoStyled, SecInfoStyled, InfoStyled, TrailerStyled }
