@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { List, Movie, RecHeader, RecommandedStyled, TypesStyled } from './styles/rcdStyled'
-import { getDiscover, getTrending, IMGPATH } from '../API';
+import { getDiscover, getTrending, IMGPATHlow } from '../API';
 import ItemInfo from './itemInfo';
 import { Link } from 'react-router-dom';
 
@@ -84,7 +84,7 @@ const Recommanded = () => {
                         return (
                             <Movie key={index}>
                                 <Link to={`/${movie.media_type || type}/${movie.id}`} >
-                                    <img src={IMGPATH + movie.poster_path} alt=' ' />
+                                    <img src={IMGPATHlow + movie.poster_path} alt=' ' />
                                 </Link>
                                 <h4>{movie.name || movie.title}</h4>
                                 <ItemInfo item={movie} type={movie.media_type || type}></ItemInfo>
